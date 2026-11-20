@@ -1,49 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página css</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Conceptos de CSS y diseño responsive</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
-<div  class="container-fluid seccion-menu">
-<!--imagen del menu -->
- <div class="container-image">
-    <div class="row g-3">
-     <div class=" col-xl-3 col-xxl-3">
-         <div class="card" style="width: 18rem;">
-             <img src="..." class="card-img-top" alt="...">
-         <div class="card-body">
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-     </div>
-    </div>
- </div>
+<body class="bg-white text-secondary">
 
-<!--meniu-->
-  <div class=" navbar-container col-xl-7 col-xxl-7">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-         <a class="nav-link active" aria-current="page" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-           <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-  </div>
+<!-- barrita celeste claro -->
+<p class="bg-info-subtle text-danger-emphasis text-center py-2 small mb-0">Conceptos de CSS para diseñar páginas web :)</p>
+
+<!-- meniu -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container-fluid py-2">
+        <a class="navbar-brand text-secondary fw-bold" href="#inicio">CSS</a>
+
+        <!-- el boton al hacer el responsive en el celular -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav ms-auto text-center">
+                <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#bases">Bases</a>
+                <a class="nav-link" href="#responsive">Responsive</a>
+                <a class="nav-link" href="#selectores">Selectores</a>
+                <a class="nav-link" href="#fuentes">Fuentes</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- portada -->
+<div class="container mt-3" id="inicio">
+    <div class="row g-0 bg-danger-subtle align-items-stretch">
+        <div class="col-12 col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-start p-4 p-lg-5">
+            <p class="small fw-bold text-uppercase mb-2">Introducción a CSS</p>
+            <h1 class="display-4 text-body-emphasis fst-italic">CSS paso a paso.</h1>
+            <p class="lead">Esta página explica los fundamentos de CSS, sus formas de incorporación y las herramientas que adaptan un diseño a distintos tamaños de pantalla.</p>
+            <a class="bg-primary-subtle btn btn-secundary px-4" href="#bases">Ver la sintaxis</a>
+        </div>
+
+        <div class="col-12 col-lg-7 order-1 order-lg-2">
+            <img src="img/escritorio-rosa.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Portátil y teclado sobre un escritorio rosa">
+        </div>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-4 g-3 text-center py-3">
+        <div class="col py-2">
+            <p class="fw-bold mb-0">Reglas y selectores</p>
+            <small>Propiedad y valor</small>
+        </div>
+        <div class="col py-2">
+            <p class="fw-bold mb-0">Tres formas de CSS</p>
+            <small>Externo, interno y en línea</small>
+        </div>
+        <div class="col py-2">
+            <p class="fw-bold mb-0">Diseño responsive</p>
+            <small>De celular a escritorio</small>
+        </div>
+        <div class="col py-2">
+            <p class="fw-bold mb-0">Nueve temas</p>
+            <small>Del 2.1 al 2.9</small>
+        </div>
+    </div>
 </div>
 
+<!-- Contenido en circulos -->
+<div class="container py-5">
+    <p class="text-center small text-uppercase mb-1">Contenido principal</p>
+    <h2 class="text-center text-body-emphasis fst-italic mb-4">CSS dividido en cuatro áreas</h2>
+
+    <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+        <div class="col">
+            <div class="ratio ratio-1x1 mb-3">
+                <img src="img/codigo-css.jpg" class="img-fluid rounded-circle w-90 h-100 object-fit-cover border" alt="Pantalla con HTML y enlaces a archivos CSS">
+            </div>
+            <p class="fw-bold mb-0">Fundamentos</p>
+            <small>Sintaxis y formas de uso</small>
+        </div>
+
+        <div class="col">
+            <div class="ratio ratio-1x1 mb-3">
+                <img src="img/diseno-creativo.jpg" class="img-fluid rounded-circle w-90 h-100 object-fit-cover border" alt="Persona preparando el diseño de una página">
+            </div>
+            <p class="fw-bold mb-0">Organización</p>
+            <small>Herencia y especificidad</small>
+        </div>
+
+        <div class="col">
+            <div class="ratio ratio-1x1 mb-3">
+                <img src="img/responsive-dispositivos.jpg" class="img-fluid rounded-circle w-90 h-100 object-fit-cover border" alt="Diseño web mostrado en un portátil y un teléfono">
+            </div>
+            <p class="fw-bold mb-0">Responsive</p>
+            <small>Flexbox, Grid y breakpoints</small>
+        </div>
+
+        <div class="col">
+            <div class="ratio ratio-1x1 mb-3">
+                <img src="img/capas-zindex.jpg" class="img-fluid rounded-circle w-90 h-100 object-fit-cover border" alt="Papeles de colores colocados en distintas capas">
+            </div>
+            <p class="fw-bold mb-0">Selectores y capas</p>
+            <small>Pseudo-clases, elementos y z-index</small>
+        </div>
+    </div>
+</div>
+
+<!-- aqui empieza la sintaxis -->
+<section class="container pb-5" id="bases">
+    <div class="row g-0 align-items-stretch">
+        <div class="col-12 col-lg-5">
+            <img src="img/codigo-css.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Código HTML que enlaza varios archivos de estilos">
+        </div>
+
+        <div class="col-12 col-lg-7 d-flex flex-column justify-content-center p-4 p-lg-5">
+            <span class="badge text-bg-warning mb-2 align-self-start">2.1</span>
+            <h2 class="text-body-emphasis fst-italic">Estructura y sintaxis</h2>
+            <p>Una regla CSS empieza con un <strong>selector</strong>, que elige el elemento. Dentro de las llaves van las declaraciones. Cada declaración tiene una propiedad, dos puntos, un valor y normalmente termina en punto y coma.</p>
+            <pre class="bg-body-tertiary p-3 mb-2 overflow-auto"><code>h1 {
+    color: rebeccapurple;
+    font-size: 2rem;
+}</code></pre>
+            <p class="small mb-0"><code>h1</code> es el selector, <code>color</code> es la propiedad y <code>rebeccapurple</code> es el valor.</p>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-3 align-items-start">
+        <div class="bg-danger-subtle  col-20 col-lg-20 py-3 pe-lg-5">
+            <span class="badge bg-danger-subtle text-danger-emphasis mb-2">2.2</span>
+            <h2 class="h3 text-body-emphasis">Tres formas de incorporar CSS</h2>
+            <p>Las tres formas son válidas. En una web con varias páginas suele recomendarse el archivo externo porque permite reutilizar los mismos estilos.</p>
+
+            <p class="fw-bold mb-1">Externo</p>
+            <p class="small mb-2">Las reglas quedan en un archivo <code>.css</code> que se puede reutilizar.</p>
+            <code class="small d-block mb-3">&lt;link rel="stylesheet" href="index.css"&gt;</code>
+
+            <p class="fw-bold mb-1">Interno</p>
+            <p class="small mb-2">Se escribe dentro de <code>&lt;style&gt;</code> en el <code>&lt;head&gt;</code>. Puede servir para una prueba corta.</p>
+            <code class="small d-block mb-3">&lt;style&gt; p { color: purple; } &lt;/style&gt;</code>
+
+            <p class="fw-bold mb-1">En línea</p>
+            <p class="small mb-2">Va en un solo elemento y mezcla el contenido con la presentación.</p>
+            <code class="small d-block">&lt;p style="color: purple;"&gt;Texto&lt;/p&gt;</code>
+        </div>
+     <div class="bg-info-subtle col-12 p-3">
+
+    <div class="py-2 pb-3">
+        <span class="badge bg-warning-subtle text-warning-emphasis mb-2">2.3</span>
+        <h2 class="h4 text-body-emphasis">Indentación, herencia y comentarios</h2>
+
+        <p class="small">La indentación no suele cambiar el resultado, pero deja claro qué declaraciones pertenecen a cada regla. Los comentarios CSS se escriben entre <code>/*</code> y <code>*/</code>.</p>
+
+        <p class="small">Algunas propiedades pasan del padre a sus hijos. <code>color</code> suele heredarse; <code>border</code> normalmente no.</p>
+
+        <pre class="bg-body-tertiary p-3 mb-0 overflow-auto"><code>/* color para toda esta parte */
+.aviso {
+    color: darkred;
+}</code></pre>
+    </div>
+
+    <div class="bg-white col-12 p-3">
+        <div class="border-top pt-4">
+            <span class="badge bg-info-subtle text-info-emphasis mb-2">2.4</span>
+            <h2 class="h4 text-body-emphasis">Niveles de especificidad</h2>
+
+            <p class="small">Cuando varias reglas cambian la misma propiedad, se compara su peso. En general: estilo en línea, ID, clase o pseudo-clase y, por último, etiqueta o pseudo-elemento.</p>
+
+            <p class="small mb-2">Si dos selectores tienen el mismo peso, gana el que aparece después.</p>
+
+            <code>p &lt; .nota &lt; #introduccion</code>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- la parte responsive -->
+<section class="container-fluid bg-body-tertiary py-5" id="responsive">
+    <div class="container">
+        <p class="text-center small text-uppercase mb-1">La página se tiene que adaptar</p>
+        <h2 class="text-center text-body-emphasis fst-italic mb-4">Flexbox, Grid y tamaños de pantalla</h2>
+
+        <!-- en celular la foto queda primero -->
+        <div class="row g-0 bg-white align-items-stretch">
+            <div class="col-12 col-lg-7">
+                <img src="img/responsive-dispositivos.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="La misma interfaz representada en portátil y teléfono">
+            </div>
+            <div class="col-12 col-lg-5 d-flex flex-column justify-content-center p-4 p-lg-5">
+                <p class="small text-uppercase mb-1">Lo que hace Bootstrap aquí</p>
+                <h3 class="text-body-emphasis fst-italic">Primero móvil, después pantallas grandes</h3>
+                <p>Una clase sin breakpoint se aplica desde el tamaño más pequeño. Después se añaden cambios con <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> o <code>xxl</code>.</p>
+                <p class="mb-0">Por ejemplo, <code>col-12 col-lg-6</code> ocupa toda la fila en celular y la mitad desde <code>lg</code>.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-3 align-items-start">
+            <div class="col-12 col-lg-8 py-4 pe-lg-5">
+                <span class="badge text-bg-primary mb-2">2.5</span>
+                <h3 class="text-body-emphasis">Flexbox, Grid y breakpoints</h3>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 my-2">
+                    <div class="col">
+                        <p class="fw-bold mb-1">Flexbox</p>
+                        <p class="small mb-0">Organiza elementos en una dimensión: una fila o una columna. Ayuda a alinear, centrar y repartir espacio.</p>
+                    </div>
+                    <div class="col">
+                        <p class="fw-bold mb-1">CSS Grid</p>
+                        <p class="small mb-0">Trabaja en dos dimensiones, así que controla filas y columnas al mismo tiempo.</p>
+                    </div>
+                </div>
+
+                <p class="small mt-3">El grid normal de Bootstrap usa 12 columnas y está construido con Flexbox. Se arma con <code>container</code>, <code>row</code> y <code>col-*</code>.</p>
+                <pre class="bg-white p-3 overflow-auto"><code>&lt;div class="row"&gt;
+    &lt;div class="col-12 col-lg-6"&gt;Uno&lt;/div&gt;
+    &lt;div class="col-12 col-lg-6"&gt;Dos&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="small mb-0"><strong>Breakpoints:</strong> xs &lt; 576 · sm ≥ 576 · md ≥ 768 · lg ≥ 992 · xl ≥ 1200 · xxl ≥ 1400</p>
+            </div>
+
+            <div class="col-12 col-lg-4 py-4">
+                <span class="badge bg-danger-subtle text-danger-emphasis mb-2">2.6</span>
+                <h3 class="h4 text-body-emphasis">Media queries</h3>
+                <p>Una media query aplica reglas solamente cuando se cumple una condición, como el ancho mínimo de la pantalla.</p>
+                <pre class="bg-white p-3 overflow-auto"><code>.titulo {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .titulo {
+        font-size: 3rem;
+    }
+}</code></pre>
+                <p class="small mb-0">Bootstrap ya incluye estas condiciones en clases como <code>d-none d-md-block</code> o <code>text-center text-md-start</code>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- esta parte son estados y capas -->
+<section class="container py-5" id="selectores">
+    <p class="text-center small text-uppercase mb-1">Dos puntos, dos puntos dobles y capas</p>
+    <h2 class="text-center text-body-emphasis fst-italic mb-4">Pseudo-elementos, pseudo-clases y z-index</h2>
+
+    <div class="row g-0">
+        <div class="col-7 col-lg-8">
+            <img src="img/boceto-grid.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Bocetos de una web en formato de escritorio y celular">
+        </div>
+        <div class="col-5 col-lg-4">
+            <img src="img/capas-zindex.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Papeles superpuestos que representan niveles de z-index">
+        </div>
+    </div>
+
+    <!-- los bloques tienen tamaños distintos a proposito -->
+    <div class="row g-0">
+        <div class="col-12 col-lg-5 bg-success-subtle p-4">
+            <span class="badge text-bg-light mb-2">2.7</span>
+            <h3 class="h4 text-body-emphasis">Pseudo-elementos</h3>
+            <p>Seleccionan una parte concreta de un elemento. Se escriben normalmente con dos puntos dobles. <code>::before</code> y <code>::after</code> pueden crear contenido decorativo.</p>
+            <pre class="bg-white p-3 mb-0 overflow-auto">
+<code>.nota::before {
+    content: "𝐒𑁤 ❤︎ 𑣲𝑨";
+}</code></pre>
+        </div>
+
+        <div class="col-7 col-lg-4 bg-danger-subtle p-4">
+            <span class="badge text-bg-light mb-2">2.8</span>
+            <h3 class="h4 text-body-emphasis">Pseudo-clases</h3>
+            <p>Seleccionan un estado o una posición. <code>:hover</code> responde al puntero, <code>:focus</code> al elemento activo y <code>:first-child</code> al primer hijo.</p>
+            <pre class="bg-white p-3 mb-0 overflow-auto"><code>a:hover {
+    color: crimson;
+}
+
+input:focus {
+    border-color: purple;
+}</code></pre>
+        </div>
+
+        <div class="col-5 col-lg-3 bg-warning-subtle p-3 p-md-4">
+            <span class="badge text-bg-light mb-2">2.9</span>
+            <h3 class="h4 text-body-emphasis">Z-index</h3>
+            <p class="small">Decide qué elemento queda delante cuando varios se superponen. Un número mayor sube la capa, pero se compara dentro de su contexto de apilamiento.</p>
+            <code>position: relative;</code><br>
+            <code>z-index: 3;</code>
+        </div>
+    </div>
+</section>
+
+<!-- columnas, selectores y capas -->
+<section class="container mb-5 border-top pt-5">
+    <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-5">
+            <img src="img/diseno-creativo.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Persona revisando una interfaz en un computador">
+        </div>
+        <div class="col-12 col-lg-7 d-flex flex-column justify-content-center p-4 p-lg-5">
+            <p class="small text-uppercase mb-1">Pruebas de columnas y capas</p>
+            <h2 class="text-body-emphasis fst-italic">Tres cambios que muestran cómo funciona CSS</h2>
+            <ol class="ps-3 mt-3 mb-0">
+                <li class="mb-2">Cambiar <code>col-lg-6</code> por <code>col-lg-4</code> permite observar cómo se reparten las columnas.</li>
+                <li class="mb-2">Comparar un selector de etiqueta, una clase y un ID ayuda a reconocer cuál tiene mayor especificidad.</li>
+                <li>Usar <code>z-1</code> y <code>z-3</code> en dos elementos posicionados permite comprobar cuál queda delante.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- enlaces de donde salio la informacion -->
+<section class="container-fluid bg-body-tertiary border-top py-5" id="fuentes">
+    <div class="container">
+        <p class="small text-uppercase mb-1">Fuentes de consulta</p>
+        <h2 class="h3 text-body-emphasis fst-italic mb-3">Documentación para ampliar la información</h2>
+        <div class="row g-2">
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Getting_started">MDN: primeros pasos y formas de añadir CSS</a>
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://developer.mozilla.org/es/docs/Web/CSS/Guides/Cascade/Specificity">MDN: especificidad, cascada y herencia</a>
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Responsive_Design">MDN: diseño web adaptable</a>
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://getbootstrap.com/docs/5.3/layout/grid/">Bootstrap 5.3: grid y breakpoints</a>
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements">MDN: pseudo-clases y pseudo-elementos</a>
+            <a class="col-12 col-md-6 d-block link-secondary py-2" href="https://developer.mozilla.org/es/docs/Web/CSS/Reference/Properties/z-index">MDN: z-index y orden de las capas</a>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-primary-subtle border-top py-4 text-center">
+    <p class="fw-bold mb-1">Guía de CSS</p>
+    <p class="small mb-0">Sintaxis, responsive, selectores y capas</p>
+</footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
+</html>
 
 
